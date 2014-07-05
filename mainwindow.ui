@@ -33,6 +33,7 @@
     <property name="title">
      <string>Add Graph</string>
     </property>
+    <addaction name="actionNew_Graph"/>
    </widget>
    <addaction name="menuAdd_Graph"/>
   </widget>
@@ -48,6 +49,14 @@
   <action name="actionAdd">
    <property name="text">
     <string>add</string>
+   </property>
+  </action>
+  <action name="actionNew_Graph">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>New Graph</string>
    </property>
   </action>
  </widget>

@@ -16,6 +16,7 @@ MainWindow::MainWindow(QWidget *parent) :
     setup();
     ui->customPlot->xAxis->setRange(50, 120, Qt::AlignHCenter);
     ui->customPlot->yAxis->setRange(50, 120, Qt::AlignHCenter);
+
 }
 MainWindow::~MainWindow()
 {
@@ -24,6 +25,7 @@ MainWindow::~MainWindow()
 void MainWindow::setup()
 {
     wykres(ui->customPlot);
+
     setWindowTitle("Window with graph");
     statusBar()->clearMessage();
 }
@@ -65,6 +67,20 @@ void MainWindow::wykres(QCustomPlot *customPlot)
 
 }
 
+void MainWindow::newGraph(QCustomPlot* customPlot)
+{
+    //TODO
+}
+void MainWindow::on_actionNew_Graph_triggered(bool checked)
+{
+    if(checked != true)
+    qDebug() << "teeeekst\n\n\n\n\n\n\n";
+
+    this->newGraph(ui->customPlot);
+}
+
+
+
 
 void MainWindow::realtimeDataSlot()
 {
@@ -90,7 +106,7 @@ void MainWindow::realtimeDataSlot()
     lastPointKey = key;
   }
 
-
+    //TODO wywalic z customPlot->graph() cyfry, i dać zmienne !
 
   if (drag == false)
   {
@@ -122,8 +138,6 @@ void MainWindow::mousePress(QMouseEvent*event)
     if(event->buttons() == Qt::LeftButton)
     {
         drag = true;
-
-
     }
     if(event->buttons() != Qt::LeftButton)
     {
@@ -131,9 +145,8 @@ void MainWindow::mousePress(QMouseEvent*event)
          ui->customPlot->replot();
          ui->customPlot->update();
     }
-
-
-
 }
+
+
 
 

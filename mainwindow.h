@@ -19,11 +19,15 @@ public:
 
     bool drag;
     void wykres(QCustomPlot *customPlot);
+    void newGraph(QCustomPlot* customPlot);
     void setup();
 private slots:
   void realtimeDataSlot();
 
 
+
+
+  void on_actionNew_Graph_triggered(bool checked);
 
 public slots:
   void mousePress(QMouseEvent *event);
